@@ -17,7 +17,7 @@ library(ggplot2)
 
 totalstepaday <- aggregate(steps ~ date, data = data, sum, na.rm= TRUE)
 mean(totalstepaday$steps)
-median(totalstepaday$steps
+median(totalstepaday$steps)
 summary(totalstepaday$steps)
 
 ## Make a histogram of the total number of steps taken each day.

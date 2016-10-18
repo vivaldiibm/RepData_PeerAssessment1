@@ -17,6 +17,7 @@ library(ggplot2)
 
 totalstepaday <- aggregate(steps ~ date, data = data, sum, na.rm= TRUE)
 mean(totalstepaday$steps)
+median(totalstepaday$steps
 summary(totalstepaday$steps)
 
 ## Make a histogram of the total number of steps taken each day.
@@ -33,6 +34,9 @@ stepbyinterval <- aggregate(steps ~ interval, data = data, sum, na.rm=TRUE)
 
 
 stepbyinterval2 <- aggregate(steps ~ interval, data = data, mean, na.rm=TRUE)
+
+# calculating the 5 minute interval containing the maximum steps.
+stepbyinterval2[which.max(stepbyinterval2$steps),]
 
 plot(stepbyinterval2$interval, stepbyinterval2$steps, type ="l", xlab = "interval",
      ylab = "average number of steps", main = "Average number of steps over all days")
